@@ -172,3 +172,11 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# PyCharm project files
+.idea/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
