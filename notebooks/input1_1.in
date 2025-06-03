@@ -1,0 +1,22 @@
+units metal
+boundary p p p
+atom_style atomic
+
+lattice fcc 3.6
+region copperbox block 0 8 0 8 0 8 units lattice
+create_box 1 copperbox
+create_atoms 1 box
+
+mass 1 63.546
+pair_style eam/alloy
+pair_coeff * * Cu_mishin1.eam.alloy Cu
+
+run_style verlet
+timestep 0.001
+
+thermo_style custom step temp pe ke etotal press vol lx ly lz
+thermo 100
+
+velocity all create 1200.0 753292
+fix 1 all nve
+run 50000
